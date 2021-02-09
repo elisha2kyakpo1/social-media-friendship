@@ -16,8 +16,8 @@ class UsersController < ApplicationController
   def create_friendship
     @user = User.find(params[:id])
 
-    user_friendid = current_user.id.to_s + '-' + @user.id.to_s
     if current_user.id < @user.id
+      user_friendid = current_user.id.to_s + '-' + @user.id.to_s
     else
       user_friendid = @user.id.to_s + '-' + current_user.id.to_s
     end
@@ -33,8 +33,8 @@ class UsersController < ApplicationController
   def delete_friends
     @user = User.find(params[:id])
 
-    user_friendid = current_user.id.to_s + '-' + @user.id.to_s
     if current_user.id < @user.id
+      user_friendid = current_user.id.to_s + '-' + @user.id.to_s
     else
       user_friendid = @user.id.to_s + '-' + current_user.id.to_s
     end
