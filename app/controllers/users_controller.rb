@@ -1,8 +1,18 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
+  # def index
+  #   render :json => User.all
+  # end
+
   def index
-    render :json => User.all
+    @users = User.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      # format.xml  { render :xml => @users }
+      format.json { render :json => @users }
+    end
   end
 
   def show
