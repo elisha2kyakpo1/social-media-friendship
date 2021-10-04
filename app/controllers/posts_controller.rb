@@ -4,6 +4,12 @@ class PostsController < ApplicationController
   def index
     @post = Post.new
     timeline_posts
+
+    respond_to do |format|
+      format.html
+      format.json { render :json => timeline_posts }
+    end
+    
   end
 
   def create
