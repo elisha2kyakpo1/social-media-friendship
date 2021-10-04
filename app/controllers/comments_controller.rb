@@ -1,6 +1,14 @@
 class CommentsController < ApplicationController
+  def index
+    @posts = Post.all
+    @post = Post.find(params[:post_id])
+    render :json => @post.comments.all
+  end
+  
+  
   def create
     @comment = Comment.new(comment_params)
+    @posts = Post.all
     @comment.post_id = params[:post_id]
     @comment.user = current_user
 
