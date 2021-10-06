@@ -1,6 +1,6 @@
 module Api
   module V1
-    class PostsController < ApiController
+    class PostsController < AuthenticationController
 
       def index
         @posts = Post.all.order(created_at: :desc).includes(:comments)

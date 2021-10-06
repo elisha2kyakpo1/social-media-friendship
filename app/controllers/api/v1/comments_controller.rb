@@ -1,6 +1,6 @@
 module Api
   module V1
-    class CommentsController < ApiController
+    class CommentsController < AuthenticationController
 
       def create
         @comment = Comment.new(id: params[:post_id], content: params[:content], user: current_user)
