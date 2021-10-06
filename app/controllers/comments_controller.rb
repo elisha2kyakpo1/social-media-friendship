@@ -2,7 +2,6 @@ class CommentsController < ApplicationController
   def index
     @posts = Post.all
     @post = Post.find(params[:post_id])
-    render :json => @post.comments.all
   end
   
   
