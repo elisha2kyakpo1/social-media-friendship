@@ -1,3 +1,2 @@
 class AllowlistedJwt < ApplicationRecord
-  
 end

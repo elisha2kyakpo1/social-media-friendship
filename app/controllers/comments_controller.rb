@@ -3,8 +3,7 @@ class CommentsController < ApplicationController
     @posts = Post.all
     @post = Post.find(params[:post_id])
   end
-  
-  
+
   def create
     @comment = Comment.new(comment_params)
     @posts = Post.all
